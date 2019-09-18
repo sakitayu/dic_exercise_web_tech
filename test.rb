@@ -16,10 +16,9 @@ server = WEBrick::HTTPServer.new({
 }
 
 # WEBrick::HTTPServlet::FileHandlerをWEBrick::HTTPServlet::ERBHandlerに変更する
-# '（DocumentRootの値）/'を'index.html.erb'に変更する
+# 'test.html'を'test.html.erb'に変更する 
 server.mount('/test', WEBrick::HTTPServlet::ERBHandler, 'test.html.erb')
-
-# 'test.html'を'test.html.erb'に変更する (課題用)
+# '（DocumentRootの値）/'を'index.html.erb'に変更する(課題用)
 server.mount('/', WEBrick::HTTPServlet::ERBHandler, 'index.html.erb')
 
 server.mount('/indicate.cgi', WEBrick::HTTPServlet::CGIHandler, 'indicate.rb')
